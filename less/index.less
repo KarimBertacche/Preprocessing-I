@@ -1,59 +1,186 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@import "reset.less";
+@import "colors.less";
+@import "variables.less";
+@import "mixins.less";
 
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: @rootFont;
+
+	@media @tablet {
+		font-size: 50%;
+	}
 }
 
+html, body {
+	background-color: @white;
+}
+
+.container {
+	width: @widthContainer;
+	max-width: @maxWidthContainer;
+	margin: @centered;
+	background-color: @primaryColor;
+}
+
+.centered {
+	margin: @centered;
+	margin-top: 80px;
+}
+
+header {
+	padding: @smallPadding;
+	height: 70vh;
+	background-image: url(../css/images/adventure-atmosphere-awesomeness-848573.jpg);
+	background-size: cover;
+	background-position: bottom;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); 
+	clip-path: polygon(0 0, 100% 0, 90% 70%, 50% 90%, 10% 70%); 
+
+	.heading-primary {
+		font-size: 4.5rem;
+		.absolute-position(25%, 50%);
+		color: @white;
+
+		@media @mobile {
+			font-size: 5rem;
+		}
+	}
+
+	.nav-bar {
+		.flex-layout(space-between);
+		
+		.nav__links {
+			font-size: 2rem;
+			text-decoration: none;
+			color: @white;
+			border-bottom: 2px solid transparent;
+
+			&:hover {
+				border-bottom: 2px solid @white;
+			}
+		}
+	}
+}
+
+.header-section {
+	position: relative;
+
+	.img-box {
+		width: 15rem;
+		height: 15rem;
+		border-radius: 50%;
+		border: 3px solid @red;
+		overflow: hidden;
+		margin-top: -140px;
+		.absolute-position(70px, 90%);
+		background-color: @white;
+
+		& img {
+			width: 100%;
+		}
+
+		@media @tablet {
+			width: 12rem;
+			height: 12rem;	
+		}
+
+		@media @mobile {
+			.absolute-position(90px, 80%);	
+		}
+	}
+}
+
+.main-section {
+	margin-top: 30px;
+	padding: @smallPadding;
+	
+	.flex-layout();
+
+	.aside-nav {
+		width: 20%;
+		height: 45vh;
+		border: @defaultBorder;
+		overflow: scroll;
+
+		.nav-list {
+			list-style: none;
+			
+			.nav-items {
+				display: block;
+				width: 100%;
+				text-align: center;
+				font-size: 1.7rem;
+				border: @defaultBorder;
+				padding: 3px 5px;
+				color: @white;
+
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+	
+				&:first-child {
+					margin-top: 15px;
+				}
+			}
+		}
+
+		& a {
+			text-decoration: none;
+			
+		}
+
+		@media @mobile {
+			width: 25%;
+			.flex-layout(space-between, center, column-reverse);	
+		}
+	}
+
+	.main-content {
+		width: 80%;
+		height: 45vh;
+		border: @defaultBorder;
+		overflow: scroll;
+		background-color: @white;
+		padding: @smallPadding;
+		font-size: 2.5rem;
+	}
+}
+
+footer {
+	height: 10vh;
+}
+
+//Other sections
+
+//ContactMe.html
+.contactMe-main {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 30px;
+
+	& li {
+		margin-bottom: 10px;
+	}
+}
+
+//Hobbies.html
+.hobbies-main {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+
+	& li {
+		margin-bottom: 10px;
+	}
+}
+
+//Languages.html
+.languages-main {
+	font-size: 1.7rem;
+}

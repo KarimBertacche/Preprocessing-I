@@ -1,0 +1,14 @@
+.flex-layout(@justify: flex-start, @align: flex-start, @direction: row, @wrap: no-wrap) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @direction;
+    flex-wrap: @wrap;
+}
+
+.absolute-position(@top, @left) {
+    position: absolute;
+    top: @top;
+    left: @left;
+    transform: translate(-50%, -50%);
+}
