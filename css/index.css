@@ -1,1 +1,299 @@
-/* Compile your LESS file! */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+html,
+body {
+  background-color: #fff;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #FB7305;
+}
+.centered {
+  margin: 0 auto;
+  margin-top: 80px;
+}
+header {
+  padding: 3rem;
+  height: 70vh;
+  background-image: url(../css/images/adventure-atmosphere-awesomeness-848573.jpg);
+  background-size: cover;
+  background-position: bottom;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 90% 70%, 50% 90%, 10% 70%);
+}
+header .heading-primary {
+  font-size: 4.5rem;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+@media (max-width: 550px) {
+  header .heading-primary {
+    font-size: 5rem;
+  }
+}
+header .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+}
+header .nav-bar .nav__links {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+}
+header .nav-bar .nav__links:hover {
+  border-bottom: 2px solid #fff;
+}
+.header-section {
+  position: relative;
+}
+.header-section .img-box {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 3px solid #f00;
+  overflow: hidden;
+  margin-top: -140px;
+  position: absolute;
+  top: 70px;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.header-section .img-box img {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .header-section .img-box {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media (max-width: 550px) {
+  .header-section .img-box {
+    position: absolute;
+    top: 90px;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+}
+.main-section {
+  margin-top: 30px;
+  padding: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+}
+.main-section .aside-nav {
+  width: 20%;
+  height: 45vh;
+  border: 3px solid #fff;
+  overflow: scroll;
+}
+.main-section .aside-nav .nav-list {
+  list-style: none;
+}
+.main-section .aside-nav .nav-list .nav-items {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7rem;
+  border: 3px solid #fff;
+  padding: 3px 5px;
+  color: #fff;
+}
+.main-section .aside-nav .nav-list .nav-items:not(:last-child) {
+  margin-bottom: 30px;
+}
+.main-section .aside-nav .nav-list .nav-items:first-child {
+  margin-top: 15px;
+}
+.main-section .aside-nav a {
+  text-decoration: none;
+}
+@media (max-width: 550px) {
+  .main-section .aside-nav {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+    flex-wrap: no-wrap;
+  }
+}
+.main-section .main-content {
+  width: 80%;
+  height: 45vh;
+  border: 3px solid #fff;
+  overflow: scroll;
+  background-color: #fff;
+  padding: 3rem;
+  font-size: 2.5rem;
+}
+footer {
+  height: 10vh;
+}
+.contactMe-main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.contactMe-main li {
+  margin-bottom: 10px;
+}
+.hobbies-main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.hobbies-main li {
+  margin-bottom: 10px;
+}
+.languages-main {
+  font-size: 1.7rem;
+}
